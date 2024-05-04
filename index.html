@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        var popunder = {expire: 12, url: "https://renewdate-girl.life/?u=tzcwhwl&o=zezmy0u"};
-        </script>
-        <script src="https://renewdate-girl.life/js/popunder.js"></script>
+    <title>STAC</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>SOC</h1>
+        
+        <div class="links">
+            <a href="https://www.instagram.com/rost.shev?igsh=bjlyb21kaTIxaTc5" target="_blank" class="link instagram">Instagram</a>
+            <a href="https://t.me/+IrP5gmeURb82ZjUy" target="_blank" class="link telegram">Telegram</a>
+            <a href="#" target="_blank" class="link github">GitHub</a>
+        </div>
+        <h2>DONATIONS</h2>
+        <div class="donations">
+            <p>USDT (TRC-20): <span class="wallet">TARKE7gBr27GMR3XMqNvfo4aDjaUDRnn1o</span></p>
+            <p>BTC: <span class="wallet">bc1qhuvpk84c5agvdk6tnx86k3zhum7gceurj4fx0g</span></p>
+            <p>XRP: <span class="wallet">rU8f1T69HBEA5vXQbDYCyNkF6s8vceH8kD</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  
+        <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const wallets = document.querySelectorAll('.wallet');
+    wallets.forEach(wallet => {
+        wallet.onclick = function() {
+            navigator.clipboard.writeText(wallet.innerText).then(() => {
+                alert('Адрес кошелька скопирован: ' + wallet.innerText);
+            }).catch(err => {
+                console.error('Ошибка при копировании: ', err);
+            });
+        }
+    });
+});
+</script>
+
     
 </body>
 </html>
