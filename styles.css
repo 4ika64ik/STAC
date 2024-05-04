@@ -4,12 +4,12 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Orbitron', sans-serif; /* Футуристический шрифт */
-    background-color: #0a0a0a;
+    background-color: #0a0a0a; /* Темный фон */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #ccc; /* Светло-серый цвет текста для футуристического вида */
-    overflow: hidden;
+    overflow: hidden; /* Избежание скроллинга из-за анимаций */
 }
 
 .container {
@@ -19,14 +19,14 @@ body, html {
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-    z-index: 2;
+    z-index: 2; /* Обеспечивает видимость элементов поверх канваса */
     position: relative;
 }
 
 h1, h2 {
     color: #fff;
-    text-transform: uppercase; /* Преобразование текста в заглавные буквы */
-    letter-spacing: 2px; /* Увеличение расстояния между буквами */
+    text-transform: uppercase; /* Заглавные буквы */
+    letter-spacing: 2px; /* Раздвигаем буквы для стиля */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Светящийся эффект текста */
 }
 
@@ -43,13 +43,13 @@ h1, h2 {
     text-decoration: none;
     background-color: #555;
     box-shadow: 0 5px #666;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Плавная анимация для кнопок */
 }
 
 .link:hover {
     background-color: #777;
     box-shadow: 0 4px #444;
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* Поднимаем кнопку при наведении */
 }
 
 .instagram { background-color: #E1306C; }
@@ -57,7 +57,7 @@ h1, h2 {
 .github { background-color: #333; }
 
 canvas {
-    position: fixed;
+    position: fixed; /* Канвас расположен фиксированно */
     top: 0;
     left: 0;
     z-index: 1;
@@ -69,16 +69,44 @@ canvas {
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 16px; /* Четкость и читаемость */
 }
 
 .wallet {
-    font-family: monospace;
+    font-family: monospace; /* Шрифт для адресов кошельков */
     color: #ddd;
-    cursor: pointer;
+    cursor: pointer; /* Указатель, показывает что элемент кликабельный */
     display: inline-block;
 }
 
 .wallet:hover {
-    color: #bbb;
+    color: #bbb; /* Смена цвета при наведении */
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    body, html {
+        font-size: 14px; /* Уменьшаем базовый размер шрифта */
+    }
+
+    .container {
+        padding: 20px; /* Дополнительные отступы в контейнере */
+    }
+
+    h1 {
+        font-size: 24px; /* Уменьшение размера заголовков */
+    }
+
+    .links, .donations p {
+        flex-direction: column; /* Элементы становятся вертикальными */
+        align-items: center; /* Центрирование элементов */
+    }
+
+    .link, .donations p {
+        padding: 8px 16px; /* Подстройка размеров кнопок и блоков */
+    }
+
+    .wallet {
+        font-size: 12px; /* Уменьшение шрифта адресов кошельков */
+    }
 }
