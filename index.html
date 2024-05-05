@@ -6,17 +6,17 @@
     <title>STAC</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1564144254350385');
-    fbq('track', 'PageView');
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1564144254350385');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1564144254350385&ev=PageView&noscript=1"
@@ -34,28 +34,31 @@
         </div>
         <h2>DONATIONS</h2>
         <div class="donations">
-            <p>USDT TRC-20: <span class="wallet">TARKE7gBr27GMR3XMqNvfo4aDjaUDRnn1o</span></p>
-            <p>BTC: <span class="wallet">bc1qhuvpk84c5agvdk6tnx86k3zhum7gceurj4fx0g</span></p>
-            <p>XRP: <span class="wallet">rU8f1T69HBEA5vXQbDYCyNkF6s8vceH8kD</span></p>
+            <p>USDT TRC-20: <span class="wallet track-lead">TARKE7gBr27GMR3XMqNvfo4aDjaUDRnn1o</span></p>
+            <p>BTC: <span class="wallet track-lead">bc1qhuvpk84c5agvdk6tnx86k3zhum7gceurj4fx0g</span></p>
+            <p>XRP: <span class="wallet track-lead">rU8f1T69HBEA5vXQbDYCyNkF6s8vceH8kD</span></p>
         </div>
     </div>
     <script src="script.js"></script>
-  
-        <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const wallets = document.querySelectorAll('.wallet');
-    wallets.forEach(wallet => {
-        wallet.onclick = function() {
-            navigator.clipboard.writeText(wallet.innerText).then(() => {
-                alert('Адрес кошелька скопирован: ' + wallet.innerText);
-            }).catch(err => {
-                console.error('Ошибка при копировании: ', err);
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wallets = document.querySelectorAll('.wallet');
+            const leads = document.querySelectorAll('.track-lead');
+            wallets.forEach(wallet => {
+                wallet.onclick = function() {
+                    navigator.clipboard.writeText(wallet.innerText).then(() => {
+                        alert('Адрес кошелька скопирован: ' + wallet.innerText);
+                    }).catch(err => {
+                        console.error('Ошибка при копировании: ', err);
+                    });
+                }
             });
-        }
-    });
-});
-</script>
-
-    
+            leads.forEach(lead => {
+                lead.onclick = function() {
+                    fbq('track', 'Lead');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
